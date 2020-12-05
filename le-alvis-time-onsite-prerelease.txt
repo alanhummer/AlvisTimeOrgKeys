@@ -1,3 +1,0 @@
-{
-    "orgKeyURI": "http://issues.landsend.com/jira/secure/attachment/79354/le-alvis-time-onsite.json"
-}
