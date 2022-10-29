@@ -1,0 +1,494 @@
+{
+  "AlvisTime": {
+    "configUploadLocation": "http://entegral.atlassian.net/jira/browse/AMC-32",
+    "downloadLocation": "https://github.com/alanhummer/AlvisTime/archive/master.zip",
+    "message": "We have a new version of Alvis Time! Do you want to download and update new version?<BR><BR>This version contains reports and fix for daylight savings time.",
+    "upgradeRequired": false,
+    "version": "1.0",
+    "configTimestamp": "2021.05.30.16.40.32"
+  },
+  "orgEmailConfig": {
+    "emailEndpoint": "http://entegral.atlassian.net/sendmail.asp",
+    "emailFrom": "from",
+    "emailMessage": "message",
+    "emailMethod": "POST",
+    "emailSubject": "subject",
+    "emailTo": "to"
+  },
+  "orgLegacyTimeIntegration": {
+    "legacyIngegrationScript": "content_injection.js",
+    "legacyIntegrationURI": "https://entegral.service-now.com/time_card.do?sys_id=-1&sys_is_list=true&sys_target=time_card&sysparm_checked_items=&sysparm_fixed_query=&sysparm_group_sort=&sysparm_list_css=&sysparm_query=user.u_timecard_team_lead%3djavascript%3ags.getUserID()%5eORuser.u_timecard_manager%3djavascript%3ags.getUserID()%5estate%3dSubmitted%5eGROUPBYuser&sysparm_referring_url=time_card_list.do%3fsysparm_query%3duser.u_timecard_team_lead%253Djavascript%253Ags.getUserID%2528%2529%255EORuser.u_timecard_manager%253Djavascript%253Ags.getUserID%2528%2529%255Estate%253DSubmitted%255EEQ%255EGROUPBYuser&sysparm_target=&sysparm_view=",
+    "legacyPostTime": true,
+    "legacyScreenshotScript": "screenshot_injection.js",
+    "legacyTimeApprovedURI": "https://entegral.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user=_LEGACYUSERID_^state=Approved^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Approved^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_view=",
+    "legacyTimePendingURI": "https://entegral.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user=_LEGACYUSERID_^state=Pending^ORstate=Submitted^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Pending^GOTOweek_starts_on>=_STARTDAY_&sysparm_view=",
+    "legacyTimePendingURIAll": "https://entegral.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user.u_timecard_team_lead=javascript:gs.getUserID()^ORuser.u_timecard_manager=javascript:gs.getUserID()^state=Pending^ORstate=Submitted^GOTOweek_starts_on%3E=_STARTDAY_^total%3E0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Pending^GOTOweek_starts_on%3E=_STARTDAY_&sysparm_view=",
+    "legacyTimeSubmittedURI": "https://entegral.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user=_LEGACYUSERID_^state=Submitted^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Submitted^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_view="
+  },
+  "orgReminderNotice": {
+    "from": "timereporting@entegral.com",
+    "message": "Time Entry for _WEEK_ _DUEMESSAGE_.  Please ensure you get your time entered before it is due.  Reminder - time entry is due by 5PM on the last day of the week.",
+    "subject": "Time Entry for _WEEK_ _DUEMESSAGE_"
+  },
+  "orgSettings": {
+    "goLogo": "images/go_button.png",
+    "jiraAPIExtension": "/rest/api/2",
+    "jiraBaseURI": "https://entegral.atlassian.net",
+    "logo": "images/entegral-logo.png"
+  },
+  "workgroups": [
+    {
+      "issueGroups": [
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": true,
+          "isProject": true,
+          "key": "res-mgmt",
+          "minPercentage": 0,
+          "name": "Resource Management Stuff",
+          "query": "project = PEO AND labels = RES-MGMT-STUFF AND Status not in (DONE) ORDER BY Rank ASC",
+          "timePriority": 2,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "agile-safe",
+          "minPercentage": 0,
+          "name": "ICVS Agile Management Stuff",
+          "query": "project = PEO AND labels = AGILE-SAFE AND Status not in (DONE) order by rank ASC",
+          "timePriority": 1,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "manager-stuff",
+          "minPercentage": 0,
+          "name": "Dept Managment Stuff",
+          "query": "project = PEO AND labels = MANAGER-STUFF AND Status not in (DONE) order by rank ASC",
+          "timePriority": 4,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": true,
+          "key": "side-projects",
+          "minPercentage": 0,
+          "name": "Projects",
+          "query": "project = PEO AND labels = SIDE-PROJECTS AND Status not in (DONE) order by rank ASC",
+          "timePriority": 3,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "thundercats_work",
+          "minPercentage": 0,
+          "name": "Thundercats Work",
+          "query": "project = PEO AND labels = Thundercats AND Status not in (DONE) order by rank ASC",
+          "timePriority": 1,
+          "viewOnly": false
+        },    
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "thundercats_stories",
+          "minPercentage": 0,
+          "name": "Thundercats Stories",
+          "query": "project = AMC AND labels = ThunderCats AND sprint in openSprints()",
+          "oldquery": "project = AMC AND (labels = ThunderCats AND (sprint in openSprints()) or (updated >= -1w AND assignee was 'user.userid') or (updated >= -1w AND issuekey IN updatedBy('user.userid')) or (worklogComment ~ 'user.userid' and worklogDate >= '_TIMECARDSTART_' and worklogDate < '_TIMECARDEND_') or (worklogAuthor = 'user.userid' and worklogDate >= '_TIMECARDSTART_' and worklogDate < '_TIMECARDEND_'))",
+          "timePriority": 1,
+          "viewOnly": false
+        },             
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "misc",
+          "minPercentage": 0,
+          "name": "Miscellaneous",
+          "query": "project = PEO AND labels = MISCELLANEOUS AND Status not in (DONE) order by rank ASC",
+          "timePriority": 1,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "benefits",
+          "minPercentage": 0,
+          "name": "Benefits, Time-Off, Development",
+          "query": "project = PEO AND labels = BENEFITS-TIME-OFF AND Status not in (DONE) order by rank ASC",
+          "timePriority": 1,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "PEO",
+          "classSelect": false,
+          "isProject": false,
+          "key": "lookup",
+          "minPercentage": 0,
+          "name": "<div style='vertical-align:middle;color:red;display:inline-block;'>Don't see an issue you need? Enter it here:  _JIRAPROJECTKEY_-<input id='issue-id' type='text' style='width: 40px;'>_GOIMAGE_&nbsp;&nbsp;&nbsp;</div>",
+          "query": "project = PEO AND labels = issueds order by rank DESC",
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "AMC",
+          "classSelect": false,
+          "isProject": false,
+          "key": "thundercats_lookup",
+          "minPercentage": 0,
+          "name": "<div style='vertical-align:middle;color:red;display:inline-block;'>Don't see an issue you need? Enter it here:  _JIRAPROJECTKEY_-<input id='issue-id' type='text' style='width: 40px;'>_GOIMAGE_&nbsp;&nbsp;&nbsp;</div>",
+          "query": "project = AMC AND labels = issueds order by rank DESC",
+          "viewOnly": false
+        }  
+      ],
+      "messages": {
+        "hoursChangeSuccess": "Success - _TIMEBEGIN_ for _TIMEENTRY_",
+        "hoursIncrements": "Must be a in quarter hour increments (.25, .5, .75)",
+        "hoursNumeric": "Sorry, must be numeric hours",
+        "hoursPositive": "Must be positive number",
+        "hoursTooMany": "You work too much!  Keep it under 16",
+        "intro": "Enter time in 1/4 hour increments. If you do not see an issue you, enter it in the prompt at the end.",
+        "mixedStatuses": "This time card has mixed statuses. Issue: _ISSUE_ - WorkLog ID - _WORKLOG_ = _STATUS_",
+        "statusChangeSuccess": "Success status changed from _FROM_ to _TO_",
+        "waiting": "Posting....",
+        "workLogConverted": "Manual worklog entry converted to Alvis time format. Issue: _ISSUE_ - WorkLog ID - _WORKLOG_"
+      },
+      "name": "ICVS Management",
+      "reports": [
+        {
+          "blnAllUsers": true,
+          "key": "teamTotal",
+          "name": "Team Totals",
+          "query": "(_USERQUERY_) AND worklogDate >= '_TIMECARDSTART_' AND worklogDate < '_TIMECARDEND_'",
+          "userQuery": "worklogComment ~ 'user.userid'"
+        },
+        {
+          "blnAllUsers": false,
+          "key": "userTotal",
+          "name": "User Totals",
+          "query": "(_USERQUERY_) AND worklogDate >= '_TIMECARDSTART_' AND worklogDate < '_TIMECARDEND_'",
+          "userQuery": "worklogComment ~ 'user.userid'"
+        }
+      ],
+      "settings": {
+        "approvalNotification": {
+          "active": true,
+          "dayRangeHigh": 5,
+          "dayRangeLow": 12,
+          "frequency": 1,
+          "hourRangeHigh": 5,
+          "hourRangeLow": 12
+        },
+        "classificationToCalculate": "(calculated)",
+        "customFieldForClassification": "customfield_10644",
+        "customFieldForSubClassification": "customfield_10645",
+        "dayHoursMax": 8,
+        "daysToHangOntoPriorWeek": 0,
+        "emailOnLogin": {
+          "doSend": false,
+          "from": "alvistime@entegral.com",
+          "message": "_USERNAME_ logged in to Alvis Time",
+          "subject": "_USERNAME_ logged in to Alvis Time",
+          "to": "alan.hummer@entegral.com"
+        },
+        "emailOnSubmitForApproval": {
+          "doSend": true,
+          "from": "alvistime@entegral.com",
+          "message": "_USERNAME_ submitted time for approval in Alvis Time",
+          "subject": "_USERNAME_ submitted time for approval in Alvis Time",
+          "to": "alan.hummer@entegral.com"
+        },
+        "emailOnUpgrade": {
+          "doSend": true,
+          "from": "alvistime@entegral.com",
+          "message": "_USERNAME_ upgraded Alvis Time from _OLDVERSION_ to _NEWVERSION_",
+          "subject": "_USERNAME_ upgraded Alvis Time from _OLDVERSION_ to _NEWVERSION_",
+          "to": "alan.hummer@entegral.com"
+        },
+        "empType": "FTE",
+        "jiralink": "https://issues.entegral.com/jira/secure/RapidBoard.jspa?rapidView=54",
+        "maxHoursToSubmit": 999,
+        "minHoursToSubmit": 40,
+        "projectOverrides": [
+          {
+            "fromProject": "Project Name to Override",
+            "name": "Override",
+            "toProject": "New Project Name to use",
+            "toSubProject": "Nwe Sub-Project name to use"
+          }
+        ],
+        "remainingEstimateField": "aggregatetimeestimate",
+        "timecardNotification": {
+          "active": true,
+          "dayRangeHigh": 5,
+          "dayRangeLow": 12,
+          "frequency": 1,
+          "hourRangeHigh": 5,
+          "hourRangeLow": 12
+        }
+      },
+      "titles": {
+        "close": "(close)",
+        "week": "Week Of",
+        "welcome": "Greetings"
+      },
+      "users": [
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@entegral.com",
+          "issueGroups": [
+            "res-mgmt", "side-projects", "manager-stuff", "agile-safe", "misc", "benefits", "lookup"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Al Hummer",
+          "role": "admin",
+          "userid": "615b56e0a7071000698f7c8d"
+        },
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@entegral.com",
+          "issueGroups": [
+            "thundercats_work", "thundercats_stories", "misc", "benefits", "lookup_thundercats"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Jason Seidemann",
+          "role": "user",
+          "userid": "jseidemann"
+        },
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@entegral.com",
+          "issueGroups": [
+            "thundercats_work", "thundercats_stories", "misc", "benefits", "lookup_thundercats"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Jeremy Thompson",
+          "role": "user",
+          "userid": "jthompson"
+        },
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@entegral.com",
+          "issueGroups": [
+            "thundercats_work", "thundercats_stories", "misc", "benefits", "lookup_thundercats"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Brian OCallaghan",
+          "role": "user",
+          "userid": "bocallaghan"
+        },
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@entegral.com",
+          "issueGroups": [
+            "thundercats_work", "thundercats_stories", "misc", "benefits", "lookup_thundercats"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Anshu Wahi",
+          "role": "user",
+          "userid": "awahi"
+        },
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@entegral.com",
+          "issueGroups": [
+            "thundercats_work", "thundercats_stories", "misc", "benefits", "lookup_thundercats"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Tobin Wilson",
+          "role": "user",
+          "userid": "twilson"
+        }
+      ],
+      "workgroupTimeCardQuery": "worklogDate >= '_BEGINDATE_'  and worklogDate < '_ENDDATE_' and (_WORKLOGUSERQUERY_)"
+    }
+  ]
+}
