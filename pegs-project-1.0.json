@@ -1,0 +1,266 @@
+{
+  "AlvisTime": {
+    "configUploadLocation": "https://letime.atlassian.net/browse/ALVISTIME-99",
+    "downloadLocation": "https://github.com/alanhummer/JiraTime/archive/master.zip",
+    "message": "We have a new version of Alvis Time! Do you want to download and update new version?<BR><BR>This version contains reports and fix for daylight savings time.",
+    "upgradeRequired": false,
+    "version": "1.0",
+    "configTimestamp": "2021.05.30.16.40.32",
+    "editableConigurationLocation": false
+  },
+  "orgEmailConfig": {
+    "emailEndpoint": "",
+    "emailFrom": "from",
+    "emailMessage": "message",
+    "emailMethod": "POST",
+    "emailSubject": "subject",
+    "emailTo": "to"
+  },
+  "orgLegacyTimeIntegration": {
+    "legacyIngegrationScript": "",
+    "legacyIntegrationURI": "https://pegsproject.service-now.com/time_card.do?sys_id=-1&sys_is_list=true&sys_target=time_card&sysparm_checked_items=&sysparm_fixed_query=&sysparm_group_sort=&sysparm_list_css=&sysparm_query=user.u_timecard_team_lead%3djavascript%3ags.getUserID()%5eORuser.u_timecard_manager%3djavascript%3ags.getUserID()%5estate%3dSubmitted%5eGROUPBYuser&sysparm_referring_url=time_card_list.do%3fsysparm_query%3duser.u_timecard_team_lead%253Djavascript%253Ags.getUserID%2528%2529%255EORuser.u_timecard_manager%253Djavascript%253Ags.getUserID%2528%2529%255Estate%253DSubmitted%255EEQ%255EGROUPBYuser&sysparm_target=&sysparm_view=",
+    "legacyPostTime": true,
+    "legacyScreenshotScript": "",
+    "legacyTimeApprovedURI": "https://pegsproject.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user=_LEGACYUSERID_^state=Approved^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Approved^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_view=",
+    "legacyTimePendingURI": "https://pegsproject.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user=_LEGACYUSERID_^state=Pending^ORstate=Submitted^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Pending^GOTOweek_starts_on>=_STARTDAY_&sysparm_view=",
+    "legacyTimePendingURIAll": "https://pegsproject.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user.u_timecard_team_lead=javascript:gs.getUserID()^ORuser.u_timecard_manager=javascript:gs.getUserID()^state=Pending^ORstate=Submitted^GOTOweek_starts_on%3E=_STARTDAY_^total%3E0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Pending^GOTOweek_starts_on%3E=_STARTDAY_&sysparm_view=",
+    "legacyTimeSubmittedURI": "https://pegsproject.service-now.com/time_card_list.do?sysparm_first_row=1&sysparm_query=user=_LEGACYUSERID_^state=Submitted^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_query_encoded=user=javascript:gs.getUserID()^state=Submitted^GOTOweek_starts_on>=_STARTDAY_^total>0&sysparm_view="
+  },
+  "orgReminderNotice": {
+    "from": "timereporting@pegsproject.com",
+    "message": "Time Entry for _WEEK_ _DUEMESSAGE_.  Please ensure you get your time entered before it is due.  Reminder - time entry is due by 5PM on the last day of the week.",
+    "subject": "Time Entry for _WEEK_ _DUEMESSAGE_"
+  },
+  "orgSettings": {
+    "goLogo": "images/go_button.png",
+    "jiraAPIExtension": "/rest/api/2",
+    "jiraBaseURI": "https://letime.atlassian.net",
+    "logo": "images/pegsproject-logo.png"
+  },
+  "workgroups": [
+    {
+      "issueGroups": [
+        {
+          "JiraProjectKey": "ALVISTIME",
+          "classSelect": true,
+          "isProject": true,
+          "key": "project-work",
+          "minPercentage": 0,
+          "name": "Project Work",
+          "query": "project = ALVISTIME AND labels = PROJECT AND Status not in (DONE) ORDER BY Rank ASC",
+          "timePriority": 2,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "ALVISTIME",
+          "classSelect": false,
+          "isProject": false,
+          "key": "non-project-work",
+          "minPercentage": 0,
+          "name": "Non-Project Work",
+          "query": "project = ALVISTIME AND labels = NONPROJECT AND Status not in (DONE) order by rank ASC",
+          "timePriority": 1,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "ALVISTIME",
+          "classSelect": false,
+          "isProject": false,
+          "key": "benefits",
+          "minPercentage": 0,
+          "name": "Benefits",
+          "query": "project = ALVISTIME AND labels = BENEFITS AND Status not in (DONE) order by rank ASC",
+          "timePriority": 4,
+          "viewOnly": false
+        },
+        {
+          "JiraProjectKey": "ALVISTIME",
+          "classSelect": false,
+          "isProject": false,
+          "key": "peg",
+          "minPercentage": 0,
+          "name": "Peg Stuff",
+          "query": "project = ALVISTIME AND labels = PEG AND Status not in (DONE) order by rank ASC",
+          "timePriority": 4,
+          "viewOnly": false
+        }
+      ],
+      "messages": {
+        "hoursChangeSuccess": "Success - _TIMEBEGIN_ for _TIMEENTRY_",
+        "hoursIncrements": "Must be a in quarter hour increments (.25, .5, .75)",
+        "hoursNumeric": "Sorry, must be numeric hours",
+        "hoursPositive": "Must be positive number",
+        "hoursTooMany": "You work too much!  Keep it under 16",
+        "intro": "Enter time in 1/4 hour increments. If you do not see an issue you, enter it in the prompt at the end.",
+        "mixedStatuses": "This time card has mixed statuses. Issue: _ISSUE_ - WorkLog ID - _WORKLOG_ = _STATUS_",
+        "statusChangeSuccess": "Success status changed from _FROM_ to _TO_",
+        "waiting": "Posting....",
+        "workLogConverted": "Manual worklog entry converted to Alvis time format. Issue: _ISSUE_ - WorkLog ID - _WORKLOG_"
+      },
+      "name": "Pegs Project Work",
+      "reports": [
+        {
+          "blnAllUsers": true,
+          "key": "teamTotal",
+          "name": "Team Totals",
+          "query": "(_USERQUERY_) AND worklogDate >= '_TIMECARDSTART_' AND worklogDate < '_TIMECARDEND_'",
+          "userQuery": "worklogComment ~ 'user.userid'"
+        },
+        {
+          "blnAllUsers": false,
+          "key": "userTotal",
+          "name": "User Totals",
+          "query": "(_USERQUERY_) AND worklogDate >= '_TIMECARDSTART_' AND worklogDate < '_TIMECARDEND_'",
+          "userQuery": "worklogComment ~ 'user.userid'"
+        }
+      ],
+      "settings": {
+        "approvalNotification": {
+          "active": true,
+          "dayRangeHigh": 5,
+          "dayRangeLow": 12,
+          "frequency": 1,
+          "hourRangeHigh": 5,
+          "hourRangeLow": 12
+        },
+        "classificationToCalculate": "(calculated)",
+        "customFieldForClassification": "customfield_10644",
+        "customFieldForSubClassification": "customfield_10645",
+        "dayHoursMax": 8,
+        "daysToHangOntoPriorWeek": 0,
+        "emailOnLogin": {
+          "doSend": false,
+          "from": "alvistime@pegsproject.com",
+          "message": "_USERNAME_ logged in to Alvis Time",
+          "subject": "_USERNAME_ logged in to Alvis Time",
+          "to": "alan.hummer@pegsproject.com"
+        },
+        "emailOnSubmitForApproval": {
+          "doSend": true,
+          "from": "alvistime@pegsproject.com",
+          "message": "_USERNAME_ submitted time for approval in Alvis Time",
+          "subject": "_USERNAME_ submitted time for approval in Alvis Time",
+          "to": "alan.hummer@pegsproject.com"
+        },
+        "emailOnUpgrade": {
+          "doSend": true,
+          "from": "alvistime@pegsproject.com",
+          "message": "_USERNAME_ upgraded Alvis Time from _OLDVERSION_ to _NEWVERSION_",
+          "subject": "_USERNAME_ upgraded Alvis Time from _OLDVERSION_ to _NEWVERSION_",
+          "to": "alan.hummer@pegsproject.com"
+        },
+        "empType": "FTE",
+        "jiralink": "https://issues.pegsproject.com/jira/secure/RapidBoard.jspa?rapidView=54",
+        "maxHoursToSubmit": 999,
+        "minHoursToSubmit": 40,
+        "projectOverrides": [
+          {
+            "fromProject": "Project Name to Override",
+            "name": "Override",
+            "toProject": "New Project Name to use",
+            "toSubProject": "Nwe Sub-Project name to use"
+          }
+        ],
+        "remainingEstimateField": "aggregatetimeestimate",
+        "timecardNotification": {
+          "active": true,
+          "dayRangeHigh": 5,
+          "dayRangeLow": 12,
+          "frequency": 1,
+          "hourRangeHigh": 5,
+          "hourRangeLow": 12
+        }
+      },
+      "titles": {
+        "close": "(close)",
+        "week": "Week Of",
+        "welcome": "Greetings"
+      },
+      "users": [
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@pegsproject.com",
+          "issueGroups": [
+            "project-work", "non-project-work", "benefits"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Al Hummer",
+          "role": "admin",
+          "userid": "5af215ef1864357363fa7765"
+        },
+        {
+          "capacities": [
+            {
+              "classificationCapacities": [
+                {
+                  "classification": "Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Scrum Cermonies",
+                  "hours": 10
+                },
+                {
+                  "classification": "Non-Project Work",
+                  "hours": 10
+                },
+                {
+                  "classification": "Administration",
+                  "hours": 10
+                }
+              ],
+              "date": "default"
+            }
+          ],
+          "daysToHangOntoPriorWeek": 0,
+          "defaultChildClassification": "Administration",
+          "defaultClassification": "Administration",
+          "defaultDeployClassification": "Administration",
+          "email": "ahummer@pegsproject.com",
+          "issueGroups": [
+            "project-work", "non-project-work", "benefits", "peg"
+          ],
+          "legacyPostTime": false,
+          "legacyScreenShot": false,
+          "legacyTimeID": "na",
+          "legacyViewCard": false,
+          "maxHoursToSubmit": 40,
+          "name": "Peg Kiedinger",
+          "role": "user",
+          "userid": "pkiedinger"
+        }
+      ],
+      "workgroupTimeCardQuery": "worklogDate >= '_BEGINDATE_'  and worklogDate < '_ENDDATE_' and (_WORKLOGUSERQUERY_)"
+    }
+  ]
+}
