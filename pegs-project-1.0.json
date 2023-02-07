@@ -257,7 +257,7 @@
           "maxHoursToSubmit": 40,
           "name": "Peg Kiedinger",
           "role": "user",
-          "userid": "814115a7-dcb2-4d06-baf8-e9af10dc2a2a"
+          "userid": "70121:814115a7-dcb2-4d06-baf8-e9af10dc2a2a"
         }
       ],
       "workgroupTimeCardQuery": "worklogDate >= '_BEGINDATE_'  and worklogDate < '_ENDDATE_' and (_WORKLOGUSERQUERY_)"
